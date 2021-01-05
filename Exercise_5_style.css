@@ -1,0 +1,14 @@
+
+marquee
+	{
+		background-color:#DC4949 ;
+		
+	}
+
+div
+{
+	text-align: left;
+	width: 480px;
+	line-height: 40px;
+	background-color: #DC4949;
+}
