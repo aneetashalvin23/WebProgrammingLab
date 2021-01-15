@@ -1,0 +1,65 @@
+<html>
+<head>
+	<script>
+		//var x=parseFloat(prompt("Enter a number:"));
+        //var num=parseFloat(document.getElementById("n").value);
+        //var str=document.getElementById("str").value;
+		function mathfunction()
+		{
+			
+
+		var num=parseFloat(document.getElementById("n").value);
+		document.write("---------MATH OPERATIONS---------<br>");
+		
+		var pow=Math.pow(num,2);//this funcion pritnts the value 4^2
+	
+		document.write("The square of num is:"+pow+"<br>"); 
+		//document.write("<br>");
+		var s=Math.sqrt(num);//This function returns the square root of a number.
+		document.write("The square root is:"+s+"<br>"); 
+		var r=Math.round(num);//This functions rounds up to the closest integer.
+		document.write("The rounded digit is:"+r+"<br>");
+		var c=Math.ceil(num);//This function rounds up to the nearest smallest integer.
+        document.write("The nearest largest integer is:"+c+"<br>");
+        var f=Math.floor(num);//This function rounds up to the nearest largest integer.
+        document.write("The nearest smallest integer is:"+f+"<br>");
+        var a=Math.abs(num);
+        document.write("The absolute value is:"+a+"<br>");
+        
+      
+        
+		}
+		function stringfunction()
+		{
+			var str=document.getElementById("s").value;
+			document.write("---------STRING OPERATIONS---------<br>");
+        document.write("Length of the string:"+str.length+"<br>");
+        document.write("First index of string:"+str.indexOf(str)+"<br>");
+         document.write("last index of string:"+str.lastIndexOf(str)+"<br>");
+         document.write("After Converting to upper case:"+str.toUpperCase()+"<br>");
+          document.write("After Converting to lower case:"+str.toLowerCase()+"<br>");
+          document.write("---------SLICING OPERATIONS---------<br>");
+          document.write("The first three characters of string:"+str.slice(0,3)+"<br>");
+           document.write("The last three characters of string:"+str.slice(-4,-1)+"<br>");
+		}
+	</script>
+	
+</head>
+<body>
+	<form>
+		<table align="center">
+		<tr><th>Enter a floating point number</th>
+			<td><input type="text" id="n"></td>
+
+	        <td><input type="button" value="Perform math functions" onclick="mathfunction()"></td>
+	       </tr>
+	       <tr>
+	   <th>Enter a String</th>
+	   <td><input type="text" id="s"></td>
+	     <td><input type="button" value="Perform string functions" onclick="stringfunction()"></td>
+	 </tr>
+	</table>
+	   
+	</form>
+</body>
+</html>

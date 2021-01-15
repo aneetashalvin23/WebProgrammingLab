@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+	function Calender()
+	{
+	var m=parseInt(document.getElementById("month").value);
+	var y=parseInt(document.getElementById("year").value);
+	//document.write(m);
+	//document.write(y);
+
+	var d="<table border='1'><tr><th>SUN</th><th>MON</th><th>TUES</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>";
+	//document.write(d);
+	var date=new Date(y,(m-1));
+	//document.write(c);
+	var day=date.getDay();
+	for(var i=0;i<day;i++)
+	{
+		d+="<td></td>";
+	}
+	while(date.getMonth()==(m-1))
+	{
+		d+="<td>"+date.getDate()+"</td>";
+		if(date.getDay()%7==6)
+		{
+			d+="</tr><tr>";
+		}
+		date.setDate(date.getDate()+1);
+
+	}
+	d+="</table>";
+	document.getElementById("abc").innerHTML=d;
+}
+</script>
+</head>
+<body>
+    <form>
+    	<table align="center">
+    	<tr>
+    		<th>Month</th>
+    		<td><input type="text" id="month"></td>
+    	</tr>
+    	     <th>Year</th>
+    	    <td><input type="text" id="year"></td>
+    	</tr>
+    	 <tr>
+    	 	<td></td>
+    	 	<td><input type="button" value="Get Calender" onclick="Calender()"></td>
+    	    <td> <input type="reset" value="clear"></td>
+    	</tr>
+    	 </table>
+    </form>
+    
+	<p id="abc" align="center"></p>
+
+</body>
+</html>
