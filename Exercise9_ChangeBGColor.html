@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+<body align="center">
+<button id="b" >CLICK HERE</button>
+<script>
+document.getElementById("b").addEventListener("click",change);
+function change()
+{
+ var color="";
+ for(var i=0;i<6;i++)
+ {
+   color += Math.floor(Math.random()*10);
+ }
+document.body.style.background="#"+color;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<html>
+<head>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=reset] {
+  width: 100%;
+  background-color: red;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+
+</style>
+</head>
+<body>
+<h3 align="center"><u>FORM VALIDATION</u></h3>
+<br><br>
+
+<form name="myform" onsubmit="return validate()" action="welcome.html">
+<table align="center">
+<tr><th align="left">Username</th>
+    <td><input type="text" id="uname"></td>
+	<td><span id="suser" style="color:red;"></span></td>
+</tr>
+<tr><th align="left">Email</th>
+    <td><input type="text" id="email"></td>
+	<td><span id="semail" style="color:red;"></span></td>
+</tr>
+<tr><th align="left">Phone number</th>
+    <td><input type="text" id="phno"></td>
+	<td><span id="sphone" style="color:red;"></span></td>
+</tr>
+
+<tr><th align="left">Password</th>
+    <td><input type="password" id="pass"></td>
+	<td><span id="spass" style="color:red;"></span></td>
+</tr>
+<tr><th align="left">Confirm Password</th>
+    <td><input type="password" id="conpass"></td>
+	<td><span id="scpass" style="color:red;"></span></td>
+</tr>
+<tr><td><input type="reset"></td>
+    <td><button type="submit">Submit</button></td>
+</tr>
+</table>
+</form>
+
+
+
+<script type="text/javascript">
+function validate()
+{
+var uname=document.getElementById("uname").value;
+var email=document.getElementById("email").value;
+var phno=document.getElementById("phno").value;
+var pass=document.getElementById("pass").value;
+var conpass=document.getElementById("conpass").value;
+ 
+if(uname.trim()=="")
+{
+ document.getElementById('suser').innerHTML="Please enter username.";
+ return false;
+}
+else if(uname.length>12)
+{
+  document.getElementById("suser").innerHTML="Username should not exceed 12 characters."
+  return false;
+ 
+}
+else if(email.trim()=="")
+{
+ document.getElementById("semail").innerHTML="Please enter the email";
+ return false;
+}
+else if(phno.trim()=="")
+{
+ document.getElementById("sphone").innerHTML="Please enter the phone number";
+ return false;
+}
+else if(phno.length>14 || phno.length<10 || isNaN(phno))
+{
+ document.getElementById("sphone").innerHTML="Enter a valid phone number";
+ return false;
+}
+
+else if(pass=="")
+{
+ 
+ document.getElementById("spass").innerHTML="Please enter the password.";
+ return false;
+}
+else if(pass.length<8)
+{
+ document.getElementById("spass").innerHTML="Password must contain atleast 8 characters.";
+ return false;
+}
+else if(pass != conpass)
+{
+ document.getElementById("scpass").innerHTML="The passwords does not match. "
+ return false;
+}
+else
+{
+ return true;
+}
+ 
+}
+</script>
+</body>
+</html>

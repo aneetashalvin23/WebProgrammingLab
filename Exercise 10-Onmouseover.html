@@ -1,0 +1,33 @@
+<html>
+<head>
+
+</head>
+<body>
+
+<h2 id="txt">Mouse over me</h2>
+<img id="img" src="img1.jpg" height="45%" width="45%">
+
+<script>
+document.getElementById("txt").addEventListener("mouseover", mouseOverText);
+document.getElementById("txt").addEventListener("mouseout", mouseOutText);
+document.getElementById("img").addEventListener("mouseover", mouseOverImage);
+document.getElementById("img").addEventListener("mouseout", mouseOutImage);
+function mouseOverImage()
+{
+ document.getElementById("img").src="img2.jpg";
+}
+function mouseOutImage()
+{
+ document.getElementById("img").src="img1.jpg";
+}
+function mouseOverText()
+{
+ document.getElementById("txt").innerHTML="TEXT CHANGED";
+}
+function mouseOutText()
+{
+ document.getElementById("txt").innerHTML="KEEP MOUSE HERE";
+}
+</script>
+</body>
+</html>
